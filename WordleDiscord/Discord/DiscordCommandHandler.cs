@@ -48,7 +48,7 @@ class DiscordCommandHandler
         {
             var guildId = command.GuildId!.Value;
             var channelId = command.ChannelId!.Value;
-            var phrase = command.Data.Options.First().Options.First().Value.ToString();
+            var phrase = command.Data.Options.First().Options.First().Value.ToString()?.ToLower();
             var game = _wordleGameController.GuessPhrase(channelId, guildId, phrase!);
             await _renderer.RenderGameStatus(game, command);
         }
