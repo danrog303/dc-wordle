@@ -41,7 +41,7 @@ class WordleGameDiscordRenderer
         else
         {
             embedBuilder.AddField("Pozostała ilość prób", remainingTries);
-            embedBuilder.AddField("Podpowiedź", "Zielony - właściwa literka na niewłaściwej pozycji\nŻółty - właściwa literka na niewłaściwej pozycji\nSzary - literki nie ma w słowie");
+            embedBuilder.AddField("Podpowiedź", "Zielony - właściwa literka na łaściwej pozycji\nŻółty - właściwa literka na niewłaściwej pozycji\nSzary - literki nie ma w słowie");
         }
         
         var statusImage = GenerateImage(game.CorrectPhrase, game.Guesses);
