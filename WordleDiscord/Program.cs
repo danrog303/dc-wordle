@@ -68,7 +68,9 @@ class Program {
 
         try
         {
-            await _client.CreateGlobalApplicationCommandAsync(wordleCommand.Build());
+            List<ApplicationCommandProperties> commands = new();
+            commands.Add(wordleCommand.Build());
+            await _client.BulkOverwriteGlobalApplicationCommandsAsync(commands.ToArray());
         }
         catch(HttpException exception)
         {
